@@ -1,0 +1,61 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    "title",
+    "separator",
+    {
+      "type": "os",
+      "format": "{name} {version-id}"
+    },
+    {
+      "type": "kernel",
+      "format": "{sysname} {release} ({page-size} page size)"
+    },
+    {
+      "type": "bootmgr",
+      "format": "{firmware-path} - {name}"
+    },
+    "uptime",
+    {
+      "type": "packages",
+      "format": "{dpkg} (dpkg), {pacman} (pacman)"
+    },
+    "shell",
+    {
+        "type": "display",
+        "key": "Monitor",
+        "format": "{inch}\" {name} - {width}x{height} @ {refresh-rate}Hz ({rotation}°)"
+    },
+    "wm",
+    "theme",
+    "icons",
+    {
+      "type": "font",
+      "key": "UI Font"
+    },
+    {
+      "type": "terminalfont",
+      "key": "Monospace",
+      "format": "{name} ({size}pt)"
+    },
+    "cursor",
+    "cpu",
+    {
+      "type": "gpu",
+      "format": "{vendor} {name} > {driver:20}"
+    },
+    "memory",
+    "swap",
+    "disk"
+  ],
+  "display": {
+    "separator": "",
+    "color": {
+        "keys": "red",
+        "title": "white"
+    },
+    "key": {
+        "width": 11
+    }
+}
+}

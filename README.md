@@ -1,12 +1,14 @@
 # config
 my config files &amp; simple scripts
 
-Apply
+Apply:
 
 ```sh
 cp alacritty.toml ~/.alacritty.toml
 cp dunstrc ~/.config/dunst/
-cp openbox/* ~/.config/openbox/
+cp rc.xml ~/.config/openbox/
+cp cava-config ~/.config/cava/config
+cp fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 cp weston.ini ~/.config/
 cp xinitrc ~/.xinitrc
 cp xbindkeysrc ~/.xbindkeysrc
