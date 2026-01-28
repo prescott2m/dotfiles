@@ -5,5 +5,12 @@ xrdb -merge ~/.Xresources
 
 dbus-update-activation-environment --all
 
-exec openbox-session
+xfce4-panel &
+fastcompmgr -c -C &
+xbindkeys
+xappkeys &
+dunst -conf "$HOME/.config/dunst/dunstrc" &
+feh --bg-fill --no-xinerama "$HOME/Documents/bg.jpg"
+
+exec openbox
 

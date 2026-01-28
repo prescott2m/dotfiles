@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 weston --socket=wayland-waydroid --width 540 --height 1200 &
 WESTON_PID=$!

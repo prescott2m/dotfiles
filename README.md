@@ -4,7 +4,7 @@ my config files &amp; simple scripts
 Apply:
 
 ```sh
-cp alacritty.toml ~/.alacritty.toml
+cp kshrc ~/.kshrc
 cp dunstrc ~/.config/dunst/
 cp rc.xml ~/.config/openbox/
 cp cava-config ~/.config/cava/config

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if xrandr | grep -q "^USB-C-0 connected"; then
     xrandr --output USB-C-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal --rate 59.94

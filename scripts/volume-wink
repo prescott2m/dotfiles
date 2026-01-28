@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 IDFILE="/tmp/volume_notify_id"
 

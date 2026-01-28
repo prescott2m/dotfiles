@@ -319,13 +319,13 @@
 
     <keybind key="W-t">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>st</command>
       </action>
     </keybind>
 
     <keybind key="W-Return">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>st</command>
       </action>
     </keybind>
 
@@ -687,6 +687,6 @@
   </menu>
   <applications>
     <!-- Match all windows and remove their decorations -->
-    <application class="*"> <decor>no</decor> </application>
+    <application class="Weston Compositor"> <decor>no</decor> </application>
   </applications>
 </openbox_config>

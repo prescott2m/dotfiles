@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd $HOME/.beammp || exit 1
 alacritty -e $HOME/Documents/BeamMP-Launcher
