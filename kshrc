@@ -17,4 +17,4 @@ export PS1="\[$PROMPT_COLOR\]\u [ \[\033[37m\]\w \[$PROMPT_COLOR\]]\\$ \[\033[0m
 alias ls="ls -p --color=always"
 alias grep="grep --color=always"
 alias diff="diff --color=always"
-alias qemu_run_slinux="qemu-system-x86_64 -m 512 -enable-kvm -cdrom slinux.iso -bios /usr/share/qemu/OVMF.fd"
+alias qemu_run_cd="qemu-system-x86_64 -m 512 -enable-kvm -bios /usr/share/qemu/OVMF.fd -cdrom"
