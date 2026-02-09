@@ -1,0 +1,41 @@
+#!/bin/sh
+set -e
+
+# --- configure here
+SCR_DIR="$HOME/screenshots"
+SCR_FILE="$(date +%Y-%m-%d.%H:%M:%S).png"
+SCR_OUT="$SCR_DIR/$SCR_FILE"
+# ---
+
+usage() {
+    echo "usage: $0 [-cmrs]"
+    echo " -c: copy to clipboard"
+    echo " -m: main monitor"
+    echo " -r: right monitor"
+    echo " -s: selection (slurp)"
+    exit 2
+}
+
+while getopts "cmrs" opt; do
+    case "$opt" in
+    c) SCR_COPY=1 ;;
+    m) SCR_GEOMETRY="0,1680 3840x2160" ;;
+    r) SCR_GEOMETRY="3840,0 2160x3840" ;;
+    s) SCR_GEOMETRY="$(slurp)" ;;
+    *) usage ;;
+    esac
+done
+
+if [ ! -d "$SCR_DIR" ]; then
+    mkdir -p "$SCR_DIR"
+fi
+
+if [ -z "$SCR_GEOMETRY" ]; then
+    grim "$SCR_OUT"
+else
+    grim -g "$SCR_GEOMETRY" "$SCR_OUT"
+fi
+
+if [ -n "$SCR_COPY" ]; then
+    wl-copy -t image/png < "$SCR_OUT"
+fi

@@ -16,10 +16,7 @@
       "format": "{firmware-path} - {name}"
     },
     "uptime",
-    {
-      "type": "packages",
-      "format": "{dpkg} (dpkg), {pacman} (pacman)"
-    },
+    "packages",
     "shell",
     "terminal",
     {
@@ -30,6 +27,7 @@
     "wm",
     "theme",
     "icons",
+    "cursor",
     {
       "type": "font",
       "key": "UI Font"
@@ -39,7 +37,6 @@
       "key": "Monospace",
       "format": "{name} ({size}pt)"
     },
-    "cursor",
     "cpu",
     {
       "type": "gpu",
@@ -52,7 +49,7 @@
   "display": {
     "separator": "",
     "color": {
-        "keys": "red",
+        "keys": "blue",
         "title": "white"
     },
     "key": {

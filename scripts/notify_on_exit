@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 if [ "$#" -eq 0 ]; then
   echo "usage: notify_on_exit <command> [args...]" >&2
@@ -27,7 +27,7 @@ cmd_name=$(printf '%q ' "${cmd[@]}")
 cmd_name=${cmd_name% }
 
 jq -n \
-  --arg content "finished with \`$cmd_name\` (${duration})" \
+  --arg content "\`$cmd_name\` returned $status (${duration})" \
   '{content: $content}' |
 curl -sS -X POST \
   -H "Content-Type: application/json" \

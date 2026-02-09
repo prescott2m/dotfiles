@@ -1,0 +1,11 @@
+dotfiles
+========
+dotfiles & scripts
+
+apply:
+
+    cp profile ~/.profile
+    cp vimrc ~/.vimrc
+    cp -r cava fastfetch foot gtk-3.0 labwc sfwbar ~/.config/
+    doas cp vfio.conf /etc/modprobe.d/
+    doas cp scripts/* /usr/local/bin/

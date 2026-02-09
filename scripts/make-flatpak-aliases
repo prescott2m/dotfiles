@@ -1,0 +1,18 @@
+#!/bin/sh
+set -ue
+
+FLATPAKS_DIR="/usr/local/bin/flatpaks"
+
+mkdir -p $FLATPAKS_DIR
+for bin in /var/lib/flatpak/exports/bin/* ~/.local/share/flatpak/exports/bin/*; do
+    if [ -x "$bin" ]; then
+        # Get the friendly name from the metadata
+        appid=$(basename "$bin")
+        alias_name=$(flatpak info --show-metadata "$appid" | grep -m1 '^command=' | cut -d= -f2)
+        if [ -n "$alias_name" ]; then
+            if [ "$alias_name" = "startvesktop" ]; then alias_name=vesktop;
+            elif [ "$alias_name" = "com.github.tchx84.Flatseal" ]; then alias_name=flatseal; fi
+            doas ln -sfv $bin $FLATPAKS_DIR/$alias_name
+        fi
+    fi
+done
