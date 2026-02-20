@@ -1,11 +1,13 @@
 dotfiles
 ========
-dotfiles & scripts
+dotfiles, scripts, and suckless source trees
 
 apply:
 
     cp profile ~/.profile
     cp vimrc ~/.vimrc
-    cp -r cava fastfetch foot gtk-3.0 labwc sfwbar ~/.config/
+    cp -r cava fastfetch foot gtk-3.0 ~/.config/
     doas cp vfio.conf /etc/modprobe.d/
     doas cp scripts/* /usr/local/bin/
+    make -C suckless/dwl clean install
+    make -C suckless/slstatus clean install

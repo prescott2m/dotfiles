@@ -26,9 +26,7 @@ while getopts "cmrs" opt; do
     esac
 done
 
-if [ ! -d "$SCR_DIR" ]; then
-    mkdir -p "$SCR_DIR"
-fi
+mkdir -p "$SCR_DIR"
 
 if [ -z "$SCR_GEOMETRY" ]; then
     grim "$SCR_OUT"
