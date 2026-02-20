@@ -139,15 +139,17 @@ static const char *playcmd[]  = { "playerctl",      "play-pause", NULL };
 static const char *prevcmd[]  = { "playerctl",      "previous",   NULL };
 static const char *nextcmd[]  = { "playerctl",      "next",       NULL };
 static const char *scrcmd[]   = { "screenshot-p2m", "-sc",        NULL };
+static const char *cadcmd[]   = { "doas",           "poweroff",   NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                  function          argument */
-	{ 0,                         XKB_KEY_XF86AudioPlay,        spawn,    {.v = playcmd} },
-	{ 0,                         XKB_KEY_XF86AudioPrev,        spawn,    {.v = prevcmd} },
-	{ 0,                         XKB_KEY_XF86AudioNext,        spawn,    {.v = nextcmd} },
-	{ 0,                         XKB_KEY_XF86AudioRaiseVolume, spawn,    {.v = volupcmd} },
-	{ 0,                         XKB_KEY_XF86AudioLowerVolume, spawn,    {.v = voldncmd} },
+	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT, XKB_KEY_Delete,      spawn,   {.v = cadcmd}  },
+	{ 0,                         XKB_KEY_XF86AudioPlay,        spawn,   {.v = playcmd} },
+	{ 0,                         XKB_KEY_XF86AudioPrev,        spawn,   {.v = prevcmd} },
+	{ 0,                         XKB_KEY_XF86AudioNext,        spawn,   {.v = nextcmd} },
+	{ 0,                         XKB_KEY_XF86AudioRaiseVolume, spawn,   {.v = volupcmd}},
+	{ 0,                         XKB_KEY_XF86AudioLowerVolume, spawn,   {.v = voldncmd}},
 	{ MODKEY,                    XKB_KEY_grave,       spawn,            {.v = scrcmd}  },
 	{ MODKEY,                    XKB_KEY_space,       spawn,            {.v = menucmd} },
 	{ MODKEY,                    XKB_KEY_Return,      spawn,            {.v = termcmd} },
